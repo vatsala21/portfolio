@@ -1,10 +1,11 @@
 {
-  "name": "gatsby-starter-default",
+  "name": "vatsala-portfolio",
   "private": true,
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "description": "Simple Portfolio built with gatsby and ant design.",
   "version": "0.1.0",
-  "author": "Kyle Mathews <mathews.kyle@gmail.com>",
+  "author": "Vatsala <vatsala2197@gmail.com>",
   "dependencies": {
+    "antd": "^4.4.0",
     "gatsby": "^2.23.12",
     "gatsby-image": "^2.4.9",
     "gatsby-plugin-manifest": "^2.4.14",
