@@ -17,20 +17,21 @@ import {
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
+  FacebookFilled
 } from '@ant-design/icons';
 
 const { Header, Sider, Content } = Layout;
 
 const SiteLayout = ({ children }) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
+  // const data = useStaticQuery(graphql`
+  //   query SiteTitleQuery {
+  //     site {
+  //       siteMetadata {
+  //         title
+  //       }
+  //     }
+  //   }
+  // `)
 
   const [collapsed, setCollapsed]= useState(false);
 
@@ -52,6 +53,9 @@ const SiteLayout = ({ children }) => {
             </Menu.Item>
             <Menu.Item key="3" icon={<UploadOutlined />}>
               nav 3
+            </Menu.Item>
+            <Menu.Item key="4" icon={<FacebookFilled />}>
+              nav 4
             </Menu.Item>
           </Menu>
         </Sider>
