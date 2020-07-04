@@ -7,33 +7,27 @@
 
 import React, { useState } from "react"
 import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
 import "./layout.css"
 
-import { Layout, Menu } from 'antd';
+import { Layout, Menu, Row, Col } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
   UserOutlined,
   VideoCameraOutlined,
   UploadOutlined,
-  FacebookFilled
+  FacebookFilled,
+
+  TwitterOutlined,
+  GithubOutlined,
+  BehanceOutlined
 } from '@ant-design/icons';
 
 const { Header, Sider, Content } = Layout;
 
 const SiteLayout = ({ children }) => {
-  // const data = useStaticQuery(graphql`
-  //   query SiteTitleQuery {
-  //     site {
-  //       siteMetadata {
-  //         title
-  //       }
-  //     }
-  //   }
-  // `)
 
-  const [collapsed, setCollapsed]= useState(false);
+  const [collapsed, setCollapsed]= useState(true);
 
   const toggle = () => {
     setCollapsed(!collapsed);
@@ -61,10 +55,32 @@ const SiteLayout = ({ children }) => {
         </Sider>
         <Layout className="site-layout">
           <Header title='Vatsala Srivastava' className="site-layout-background" style={{ padding: 0 }}>
-            {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
-              className: 'trigger',
-              onClick: toggle,
-            })}
+            <Row align="middle" justify="space-between">
+              <Col span={6}>
+                {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                  className: 'trigger',
+                  onClick: toggle,
+                })}
+              </Col>
+              <Col span={18} push={14}>
+                <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']}>
+                  <Menu.Item key="1">
+                    <TwitterOutlined  />
+                  </Menu.Item>
+                  <Menu.Item key="2">
+                    <a href="https://github.com/vatsala21" target="_blank">
+                      <GithubOutlined />
+                    </a>
+                  </Menu.Item>
+                  <Menu.Item key="3">
+                    <a href="https://www.behance.net/vatsalasrivastava" target="_blank">
+                      <BehanceOutlined />
+                    </a>
+                  </Menu.Item>
+                </Menu>    
+              </Col>
+            </Row>
+          
           </Header>
           <Content
             className="site-layout-background"
