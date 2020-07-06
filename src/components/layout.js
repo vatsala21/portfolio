@@ -13,10 +13,10 @@ import { Layout, Menu, Row, Col } from 'antd';
 import {
   MenuUnfoldOutlined,
   MenuFoldOutlined,
-  UserOutlined,
-  VideoCameraOutlined,
-  UploadOutlined,
-  FacebookFilled,
+  HomeOutlined, 
+  ContactsOutlined,
+  ProfileOutlined,
+  BarChartOutlined,
 
   TwitterOutlined,
   GithubOutlined,
@@ -39,17 +39,11 @@ const SiteLayout = ({ children }) => {
         <Sider theme='dark' trigger={null} collapsible collapsed={collapsed}>
           <div className="logo" />
           <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1" icon={<UserOutlined />}>
-              nav 1
+            <Menu.Item key="1" icon={<ProfileOutlined /> }>
+              About me
             </Menu.Item>
-            <Menu.Item key="2" icon={<VideoCameraOutlined />}>
-              nav 2
-            </Menu.Item>
-            <Menu.Item key="3" icon={<UploadOutlined />}>
-              nav 3
-            </Menu.Item>
-            <Menu.Item key="4" icon={<FacebookFilled />}>
-              nav 4
+            <Menu.Item key="2" icon={<BarChartOutlined />}>
+              Work
             </Menu.Item>
           </Menu>
         </Sider>
@@ -57,13 +51,19 @@ const SiteLayout = ({ children }) => {
           <Header title='Vatsala Srivastava' className="site-layout-background" style={{ padding: 0 }}>
             <Row align="middle" justify="space-between">
               <Col span={6}>
-                {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
+                {/* {React.createElement(collapsed ? MenuUnfoldOutlined : MenuFoldOutlined, {
                   className: 'trigger',
                   onClick: toggle,
-                })}
+                })} */}
+                <div >
+                  {collapsed ? <MenuUnfoldOutlined className="trigger" onClick={toggle}/> : 
+                    <MenuFoldOutlined className="trigger" onClick={toggle}/>
+                  }
+                  {/* {showBox && (<div></div>)} */}
+                </div>
               </Col>
               <Col span={18} push={14}>
-                <Menu theme="light" mode="horizontal" defaultSelectedKeys={['2']}>
+                <Menu theme="light" mode="horizontal" defaultSelectedKeys={['1']}>
                   <Menu.Item key="1">
                     <TwitterOutlined  />
                   </Menu.Item>
