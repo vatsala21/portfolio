@@ -7,7 +7,7 @@ import WorkList from "../components/WorkList/workList";
 const Work: React.FC = (props) => (
   <Layout>
     <SEO title="Work" />
-    {/* <WorkList /> */}
+    <WorkList />
   </Layout>
 )
 
